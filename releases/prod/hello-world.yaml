@@ -1,0 +1,19 @@
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: production
+  namespace: okteto
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: "semver:*"
+spec:
+  releaseName: production
+  chart:
+    git: git@github.com:okteto/flux-getting-started
+    path: chart
+    ref: master
+  values:
+    replicaCount: 2
+    image:
+      repository: okteto/hello-world
+      tag: golang

@@ -1,0 +1,6 @@
+apiVersion: v2
+name: hello-world
+type: application
+version: 0.1.0
+description: Hello world chart for Okteto Cloud
+icon: https://apps.okteto.com/hello-world/icon.png
